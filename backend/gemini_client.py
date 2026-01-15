@@ -535,15 +535,30 @@ CTA EXAMPLES (use these as the LAST LINE of the body):
   ]
 }}
 
+## ⛔ ANTI-HALLUCINATION RULES (MANDATORY)
+
+You MUST NOT invent ANY of these:
+- ❌ Case studies: "when we fixed this for similar companies, replies went up 3x" - BANNED
+- ❌ Metrics: "saw 47% increase" or "3x replies" - BANNED unless in user's strategy notes
+- ❌ Client mentions: "worked with Video production teams" - BANNED unless in strategy
+- ❌ Framework examples: Cozy Earth, Nike, YSL, BMW, Microsoft - BANNED
+- ❌ Made up credentials: "top 1% partner" or "we've seen this move the needle" - BANNED
+
+If you don't have specific metrics or case studies from the strategy notes, use GENERIC language:
+- ✅ "Worth a quick look?"
+- ✅ "Curious if this resonates?"
+- ✅ "No pressure either way."
+
 ## CRITICAL REMINDERS
 
 1. The CTA question MUST be the FINAL LINE of the body - NOT after the signature
 2. EVERY variation MUST have a CTA question as the last line
-3. NO Cozy Earth, Nike, YSL, BMW - only use info from strategy notes
-4. P.S. = human touch only, no fake credentials
+3. DO NOT HALLUCINATE - only use facts from the strategy notes provided
+4. P.S. = human touch only, no fake credentials or made-up results
 5. Under 50 words per email body
+6. DO NOT mention {client_name} in the email body - you are writing FROM them
 
-FINAL CHECK: Each email FROM {client_name} TO {audience}. Last line of body = CTA? No hallucinated case studies?"""
+FINAL CHECK: Each email FROM {client_name} TO {audience}. Last line of body = CTA? No made-up metrics or case studies?"""
 
         # Debug: print what we're sending
         print(f"\n🔍 Writing FOR: {client_name}")
@@ -557,7 +572,7 @@ FINAL CHECK: Each email FROM {client_name} TO {audience}. Last line of body = CT
                 model=self.model_id,
                 contents=prompt,
                 config=types.GenerateContentConfig(
-                    temperature=0.75,  # Higher temp for fresh, creative copy
+                    temperature=0.5,  # Lower temp to reduce hallucinations
                     max_output_tokens=4000,
                 )
             )

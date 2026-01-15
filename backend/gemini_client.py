@@ -442,6 +442,24 @@ Before writing, ask yourself:
 ✅ Use pattern interrupts that feel fresh, not formulaic
 ✅ Make the CTA so low-friction it feels rude to ignore
 
+## ⚠️ CRITICAL RULES - DO NOT BREAK THESE
+
+1. **NEVER reference case studies from the training examples above** (NO Cozy Earth, NO Nike, NO YSL, NO BMW, NO Microsoft). These are examples ONLY. Use ONLY info from the user's strategy notes below.
+
+2. **EVERY email body MUST end with a CTA** - a curiosity-based question or soft ask:
+   - "Want me to send it over?"
+   - "Worth a quick look?"
+   - "Curious if this resonates?"
+   - "Mind if I share how?"
+   - "Open to a peek?"
+
+3. **P.S. lines must ONLY use information from the user's strategy notes** - NO hallucinated claims, NO made-up credentials, NO fake case studies. If the user didn't mention a case study, DON'T invent one.
+
+4. If you don't have specific case studies from the user, make the P.S. human/light instead:
+   - "P.S. No pressure either way - just thought it might click."
+   - "P.S. Happy to leave it alone if timing's off."
+   - "P.S. Took 2 min to write, takes 10 sec to reply 'nope' if not useful."
+
 ## CREATE 4 DISTINCT VARIATIONS
 
 Each should use a DIFFERENT psychological angle from the framework:
@@ -455,8 +473,8 @@ For each email:
 - Subject line: lowercase, intriguing, makes them curious (not clickbait)
 - Body: Under 50 words. Every word earns its place.
 - Start with {{{{first_name}}}} –
-- End with a curiosity-based CTA (open loop, not "book a call")
-- P.S. line that adds a human touch or light credential
+- **MUST end with a curiosity-based CTA** (open loop, not "book a call")
+- P.S. line: human touch OR light credential FROM USER'S STRATEGY NOTES ONLY
 
 ## OUTPUT FORMAT (JSON)
 
@@ -466,36 +484,40 @@ For each email:
       "id": 1,
       "hookType": "Unexpected Insight",
       "subject": "your actual creative subject line here",
-      "body": "{{{{first_name}}}} – Your actual creative email body here. Not a template. Real copy that would make someone stop and read.",
-      "ps": "P.S. Your actual P.S. line here"
+      "body": "{{{{first_name}}}} – Your insight here. Flip an assumption. End with a CTA question like 'Worth a quick look?'",
+      "ps": "P.S. Human touch - no fake case studies"
     }},
     {{
       "id": 2,
       "hookType": "Specificity Play",
       "subject": "different subject",
-      "body": "{{{{first_name}}}} – Different angle, different copy. Use a specific number or detail from the strategy.",
-      "ps": "P.S. Different P.S."
+      "body": "{{{{first_name}}}} – Use a specific number from strategy. End with CTA like 'Curious if this resonates?'",
+      "ps": "P.S. Only reference real info from strategy notes"
     }},
     {{
       "id": 3,
       "hookType": "Casual Value Drop",
       "subject": "third subject",
-      "body": "{{{{first_name}}}} – Lead with pure value. No ask. Just give them something useful.",
-      "ps": "P.S. Light and human"
+      "body": "{{{{first_name}}}} – Lead with value. Offer something useful. End with 'Want me to send it over?'",
+      "ps": "P.S. Keep it light and real"
     }},
     {{
       "id": 4,
       "hookType": "Pattern Break",
-      "subject": "fourth subject - make it weird/unexpected",
-      "body": "{{{{first_name}}}} – This one should feel completely different from normal cold emails.",
-      "ps": "P.S. Make it memorable"
+      "subject": "fourth subject - unexpected",
+      "body": "{{{{first_name}}}} – Break the pattern. End with a soft CTA like 'Mind if I share how?'",
+      "ps": "P.S. No pressure either way"
     }}
   ]
 }}
 
-REMEMBER: You're not filling in a template. You're writing copy that would make a burnt-out founder actually reply. Make it GOOD.
+REMEMBER: 
+- You're not filling in a template. Write REAL copy.
+- EVERY email MUST have a CTA at the end of the body.
+- NEVER reference Cozy Earth, Nike, or any examples from the framework above.
+- P.S. lines use ONLY user-provided info or generic human touches.
 
-FINAL CHECK: Each email FROM {client_name} TO {audience}. Be a pattern disrupt. Lead with value. Under 50 words."""
+FINAL CHECK: Each email FROM {client_name} TO {audience}. Has CTA? No hallucinated case studies? Under 50 words?"""
 
         # Debug: print what we're sending
         print(f"\n🔍 Writing FOR: {client_name}")

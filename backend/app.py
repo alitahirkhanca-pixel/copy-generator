@@ -1,14 +1,40 @@
 """
 Flask API Server for Email Copy Automation
+Serves both the API and static frontend files.
 """
 
-from flask import Flask, request, jsonify
+import os
+from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
 from copy_engine import generate_copy
 
-app = Flask(__name__)
+# Get the parent directory where frontend files are
+FRONTEND_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+
+app = Flask(__name__, static_folder=FRONTEND_DIR)
 CORS(app)  # Enable CORS for frontend requests
 
+
+# ============ FRONTEND ROUTES ============
+
+@app.route('/')
+def index():
+    """Serve the main frontend page."""
+    return send_from_directory(FRONTEND_DIR, 'index.html')
+
+@app.route('/<path:path>')
+def static_files(path):
+    """Serve static files (CSS, JS, etc.)."""
+    # Don't serve API routes as static
+    if path.startswith('api/'):
+        return jsonify({"error": "Not found"}), 404
+    try:
+        return send_from_directory(FRONTEND_DIR, path)
+    except:
+        return send_from_directory(FRONTEND_DIR, 'index.html')
+
+
+# ============ API ROUTES ============
 
 @app.route('/api/generate', methods=['POST'])
 def generate():
@@ -22,14 +48,6 @@ def generate():
         "audience": "Small Business Owners",
         "website": "https://acme.com",
         "strategy": "Focus on automation pain points..."
-    }
-    
-    Returns:
-    {
-        "variations": [
-            { "id": 1, "hookType": "...", "subject": "...", "body": "...", "ps": "..." },
-            ...
-        ]
     }
     """
     try:
@@ -62,12 +80,11 @@ def health():
     return jsonify({"status": "ok"})
 
 
-import os
-
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5001))
-    print(f"🚀 Copy Engine API running on port {port}")
-    print("   POST /api/generate - Generate email variations")
-    print("   GET  /api/health   - Health check")
+    print(f"🚀 Psychic Copy Generator running on port {port}")
+    print(f"   Frontend: http://localhost:{port}/")
+    print(f"   API:      http://localhost:{port}/api/generate")
     app.run(host='0.0.0.0', debug=False, port=port)
+
 

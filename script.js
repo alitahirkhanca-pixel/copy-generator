@@ -2,10 +2,8 @@
 // Email Copy Automation - Frontend
 // ============================================
 
-// API URL - auto-detect production vs development
-const API_URL = window.location.hostname === 'localhost'
-    ? 'http://localhost:5001/api'
-    : 'https://psychic-copy-backend.up.railway.app/api';  // Update this with your Railway backend URL
+// API URL - use same origin since backend serves both API and frontend
+const API_URL = '/api';
 
 // State Management
 const state = {

@@ -469,12 +469,24 @@ Each should use a DIFFERENT psychological angle from the framework:
 3. **The Casual Value Drop**: Offer something genuinely useful with zero ask attached.
 4. **The Pattern Break**: Write something that looks/feels NOTHING like the 100 other emails in their inbox.
 
-For each email:
-- Subject line: lowercase, intriguing, makes them curious (not clickbait)
-- Body: Under 50 words. Every word earns its place.
-- Start with {{{{first_name}}}} –
-- **MUST end with a curiosity-based CTA** (open loop, not "book a call")
-- P.S. line: human touch OR light credential FROM USER'S STRATEGY NOTES ONLY
+## EMAIL STRUCTURE (FOLLOW THIS EXACTLY)
+
+Each email body MUST follow this structure:
+```
+{{{{first_name}}}} – [Opening hook / insight / observation]
+
+[Middle: flip the frame, add value, or expand on the insight]
+
+[FINAL LINE = CTA QUESTION - this is MANDATORY]
+```
+
+CTA EXAMPLES (use these as the LAST LINE of the body):
+- "Worth a quick look?"
+- "Want me to send it over?"
+- "Curious if this resonates?"
+- "Mind if I share how we do it?"
+- "Open to a 2-min breakdown?"
+- "Should I send the details?"
 
 ## OUTPUT FORMAT (JSON)
 
@@ -483,41 +495,43 @@ For each email:
     {{
       "id": 1,
       "hookType": "Unexpected Insight",
-      "subject": "your actual creative subject line here",
-      "body": "{{{{first_name}}}} – Your insight here. Flip an assumption. End with a CTA question like 'Worth a quick look?'",
-      "ps": "P.S. Human touch - no fake case studies"
+      "subject": "lowercase intriguing subject",
+      "body": "{{{{first_name}}}} – Most [audience] assume X. But the real issue is Y.\\n\\nWe found Z works better.\\n\\nWorth a quick look?",
+      "ps": "P.S. No pressure - just thought it might click."
     }},
     {{
       "id": 2,
       "hookType": "Specificity Play",
-      "subject": "different subject",
-      "body": "{{{{first_name}}}} – Use a specific number from strategy. End with CTA like 'Curious if this resonates?'",
-      "ps": "P.S. Only reference real info from strategy notes"
+      "subject": "the [specific number] detail",
+      "body": "{{{{first_name}}}} – Noticed [specific detail from strategy].\\n\\nThat one thing often [outcome].\\n\\nCurious if this resonates?",
+      "ps": "P.S. Happy to leave it alone if timing's off."
     }},
     {{
       "id": 3,
       "hookType": "Casual Value Drop",
-      "subject": "third subject",
-      "body": "{{{{first_name}}}} – Lead with value. Offer something useful. End with 'Want me to send it over?'",
-      "ps": "P.S. Keep it light and real"
+      "subject": "something for [audience type]",
+      "body": "{{{{first_name}}}} – Put together [resource/breakdown/audit] for [their situation].\\n\\nNo strings attached.\\n\\nWant me to send it over?",
+      "ps": "P.S. Took 2 min to make, takes 10 sec to reply 'nope' if not useful."
     }},
     {{
       "id": 4,
       "hookType": "Pattern Break",
-      "subject": "fourth subject - unexpected",
-      "body": "{{{{first_name}}}} – Break the pattern. End with a soft CTA like 'Mind if I share how?'",
-      "ps": "P.S. No pressure either way"
+      "subject": "weird question",
+      "body": "{{{{first_name}}}} – [Unexpected opening that breaks the pattern].\\n\\n[Quick value/insight].\\n\\nMind if I share how?",
+      "ps": "P.S. No agenda either way."
     }}
   ]
 }}
 
-REMEMBER: 
-- You're not filling in a template. Write REAL copy.
-- EVERY email MUST have a CTA at the end of the body.
-- NEVER reference Cozy Earth, Nike, or any examples from the framework above.
-- P.S. lines use ONLY user-provided info or generic human touches.
+## CRITICAL REMINDERS
 
-FINAL CHECK: Each email FROM {client_name} TO {audience}. Has CTA? No hallucinated case studies? Under 50 words?"""
+1. The CTA question MUST be the FINAL LINE of the body - NOT after the signature
+2. EVERY variation MUST have a CTA question as the last line
+3. NO Cozy Earth, Nike, YSL, BMW - only use info from strategy notes
+4. P.S. = human touch only, no fake credentials
+5. Under 50 words per email body
+
+FINAL CHECK: Each email FROM {client_name} TO {audience}. Last line of body = CTA? No hallucinated case studies?"""
 
         # Debug: print what we're sending
         print(f"\n🔍 Writing FOR: {client_name}")

@@ -1,11 +1,12 @@
-run = "cd backend && python3 app.py"
+run = "cd backend && pip install -r requirements.txt && python3 app.py"
 entrypoint = "backend/app.py"
+modules = ["python-3.11"]
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "cd backend && python3 app.py"]
+run = ["sh", "-c", "cd backend && pip install -r requirements.txt && python3 app.py"]
 deploymentTarget = "cloudrun"
 
 [[ports]]

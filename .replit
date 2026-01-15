@@ -1,0 +1,13 @@
+run = "cd backend && python app.py"
+entrypoint = "backend/app.py"
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+run = ["sh", "-c", "cd backend && python app.py"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 5001
+externalPort = 80

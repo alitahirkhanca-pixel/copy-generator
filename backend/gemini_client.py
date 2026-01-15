@@ -401,12 +401,24 @@ class GeminiClient:
 
 You have internalized the 1M Messages framework above. Now THINK like a master copywriter who has written 10,000 cold emails and knows exactly what makes prospects stop scrolling.
 
-Write 4 cold emails FROM {client_name} TO {audience}.
+## ⚠️ CRITICAL: UNDERSTAND WHO IS WHO
+
+- **SENDER (who we're writing FOR)**: {client_name}
+- **RECIPIENTS (who we're emailing TO)**: {audience}
+
+The email is written BY {client_name} TO reach {audience}.
+- {client_name} = the company offering the service
+- {audience} = the prospects/leads receiving the email
+
+❌ WRONG: "Not sure if this applies to {client_name}..." (treating client as recipient)
+✅ RIGHT: "Not sure if this applies to your [audience's business type]..." (talking TO the recipient)
+
+DO NOT mention {client_name} in the email body. The email is FROM them, not TO them.
 
 ## THE BRIEF
 
-- **SENDER**: {client_name}
-- **RECIPIENTS**: {audience}  
+- **WE ARE WRITING FOR**: {client_name} (the sender)
+- **WE ARE REACHING OUT TO**: {audience} (the recipients/prospects)
 - **Industry**: {industry}
 - **Website**: {website}
 
